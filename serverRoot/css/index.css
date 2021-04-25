@@ -1,7 +1,11 @@
+@font-face {
+    font-family: "Minecrafter";
+    src: url("../font/Minecrafter.Reg.ttf");
+}
+
 body {
     background-image:url(../img/background.jpg);
-    height: fit-content;
-    width: fit-content;
+    height: 1000px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,4 +14,14 @@ body {
 h1{
     color: aliceblue;
     font: 600;
+    font-family: "Minecrafter";
+}
+
+h2 {
+    color: aliceblue;
+    font-size: medium;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.heading-main h2{
+    
 }
