@@ -1,0 +1,16 @@
+C:\Users\claud\Documents\MCInventory\bin\Debug\net5.0\MCInventory.exe
+C:\Users\claud\Documents\MCInventory\bin\Debug\net5.0\MCInventory.deps.json
+C:\Users\claud\Documents\MCInventory\bin\Debug\net5.0\MCInventory.runtimeconfig.json
+C:\Users\claud\Documents\MCInventory\bin\Debug\net5.0\MCInventory.runtimeconfig.dev.json
+C:\Users\claud\Documents\MCInventory\bin\Debug\net5.0\MCInventory.dll
+C:\Users\claud\Documents\MCInventory\bin\Debug\net5.0\ref\MCInventory.dll
+C:\Users\claud\Documents\MCInventory\bin\Debug\net5.0\MCInventory.pdb
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.csprojAssemblyReference.cache
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.AssemblyInfoInputs.cache
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.AssemblyInfo.cs
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.csproj.CoreCompileInputs.cache
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.dll
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\ref\MCInventory.dll
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.pdb
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.genruntimeconfig.cache
