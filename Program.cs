@@ -52,7 +52,7 @@ namespace MCInventory
                     string disableSubmit = !runServer ? "disabled" : "";
                     byte[] data;
 
-                    if(myFileLoader.mimeType.IndexOf("text") >= 0)
+                    if(myFileLoader.mimeType.IndexOf("html") >= 0)
                         data = Encoding.UTF8.GetBytes(String.Format(Encoding.ASCII.GetString(myFileLoader.data), pageViews, disableSubmit));
                     else
                         data = myFileLoader.data;

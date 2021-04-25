@@ -1,0 +1,13 @@
+body {
+    background-image:url(../img/background.jpg);
+    height: fit-content;
+    width: fit-content;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    color: aliceblue;
+    font: 600;
+}
