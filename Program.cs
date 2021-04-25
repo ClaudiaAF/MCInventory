@@ -12,20 +12,6 @@ namespace MCInventory
         public static string url = "http://localhost:8000/";
         public static int pageViews = 0;
         public static int requestCount = 0;
-        public static string pageData = 
-        "<!DOCTYPE>" + 
-        "<html>" +
-            "<head>" +
-                "<title>HTTP listener example</title>" +
-                "</head>" + 
-                "</body>" +
-                    "<p>Page Views: {0}</p>" +
-                    "<form method=\"post\" action=\"shutdown\">" + 
-                        "<input type=\"submit\" value=\"Shutdown\" {1}>" +
-                    "</form>" +
-                "</body>" +
-            "</html>";
-
         public static async Task HandleIncommingConnections()
         {
             bool runServer = true;
@@ -45,24 +31,51 @@ namespace MCInventory
                 Console.WriteLine(req.UserAgent);
                 Console.WriteLine();
 
+                string path = req.Url.AbsolutePath;
+
                 //if 'shutdown' requested with POST, the shutdown server after leaving page
-                if ((req.HttpMethod == "POST") && (req.Url.AbsolutePath == "/shutdown"))
+                if ((req.HttpMethod == "POST") && (path == "/shutdown"))
                 {
+                    path = "/index.html";
                     Console.WriteLine("Shutdown requested");
                     runServer = false;
                 }
                 //ensure we don't increment the page views if favicon shows 
-                if (req.Url.AbsolutePath != "/favicon.ico")
+                if (path != "/favicon.ico")
                 pageViews+= 1;
 
-                string disableSubmit = !runServer ? "disabled" : "";
-                byte[] data = Encoding.UTF8.GetBytes(String.Format(pageData, pageViews, disableSubmit));
-                res.ContentType = "text/html";
-                res.ContentEncoding = Encoding.UTF8;
-                res.ContentLength64 = data.LongLength;
-                //write to the response stream, and then close it
-                await res.OutputStream.WriteAsync(data, 0, data.Length);
-                //close the listener
+                try
+                {
+                    FileLoader myFileLoader = new FileLoader(path);
+                    myFileLoader.ReadFile();
+
+                    string disableSubmit = !runServer ? "disabled" : "";
+                    byte[] data;
+
+                    if(myFileLoader.mimeType.IndexOf("text") >= 0)
+                        data = Encoding.UTF8.GetBytes(String.Format(Encoding.ASCII.GetString(myFileLoader.data), pageViews, disableSubmit));
+                    else
+                        data = myFileLoader.data;
+
+                    res.ContentType = myFileLoader.mimeType;
+                    res.ContentEncoding = Encoding.UTF8;
+                    res.ContentLength64 = data.LongLength;
+                    //write to the response stream, and then close it
+                    await res.OutputStream.WriteAsync(data, 0, data.Length);
+                    //close the listener
+                }
+                catch (FileNotFoundException e)
+                {
+                    byte[] data;
+                    data = Encoding.UTF8.GetBytes("<h2>A 404 Error has Occured</h2>");
+                   
+                    res.ContentType = "text/html";
+                    res.ContentEncoding = Encoding.UTF8;
+                    res.ContentLength64 = data.LongLength;
+                    res.StatusCode = 404;
+
+                    await res.OutputStream.WriteAsync(data, 0, data.Length);
+                }
                 res.Close();
             }
         }
