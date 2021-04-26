@@ -22,6 +22,7 @@ namespace MCInventory
                 case ".jpg":mimeType = "image/jpg"; break;
                 case ".css":mimeType = "text/css"; break;
                 case ".js":mimeType = "text/javascript"; break;
+                case ".gif":mimeType = "image/gif"; break;
             }
         }
 
