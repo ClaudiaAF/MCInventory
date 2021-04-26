@@ -1,0 +1,21 @@
+.inventory-nav{
+    font-family: "Minecrafter";
+}
+
+.recipes-grid{
+    position: absolute;
+    overflow-y: scroll;
+    margin-left: 12%;
+    padding: 3%;
+    height: 700px;
+}
+
+.recipe-grid-img{
+    height: 200px;    
+}
+
+@media (min-width: 1200px){
+.container {
+    max-width: 1440px;
+    }
+}
