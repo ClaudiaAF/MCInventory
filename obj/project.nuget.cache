@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "N7Gcfxx4SkeGYjQxMRqeJX39fPtkwZbtMVC8UsbOx3lSTYt+x/tSnPRJvZyEE0HTWxpith4Wbe7F/v2P/HFd0w==",
+  "dgSpecHash": "OhCuBj44xUKvwwYJxFLrT2vcLQ3sFur2y6oYnHWJntcvNn2WsBDTZdnHh1JhMG/0GRmPfI21JuMrTi7zzKW4GQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\claud\\Documents\\MCInventory\\MCInventory.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\claud\\.nuget\\packages\\htmlagilitypack\\1.11.33\\htmlagilitypack.1.11.33.nupkg.sha512"
+  ],
   "logs": []
 }
