@@ -53,10 +53,25 @@ namespace MCInventory
                     byte[] data;
 
                     if(myFileLoader.mimeType.IndexOf("html") >= 0)
-                        data = Encoding.UTF8.GetBytes(String.Format(Encoding.ASCII.GetString(myFileLoader.data), pageViews, disableSubmit));
+                    {
+                        string input = Encoding.UTF8.GetString(myFileLoader.data);
+            
+                         if (path == "/resources.html")
+                    
+                    
+                        data = Encoding.UTF8.GetBytes(ResourcesHtmlParser.Process(input));
+                    
+                    else 
+                    
+                        throw new FileNotFoundException("non page");
+                    }
+                            
+                    
                     else
+                    {
                         data = myFileLoader.data;
-
+                    }
+                
                     res.ContentType = myFileLoader.mimeType;
                     res.ContentEncoding = Encoding.UTF8;
                     res.ContentLength64 = data.LongLength;

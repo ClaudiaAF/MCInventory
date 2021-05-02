@@ -44,6 +44,7 @@ namespace MCInventory
                 binReader.Close();
                 fileStream.Close();
             }
+
         }
     }
 }

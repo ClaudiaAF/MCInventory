@@ -14,3 +14,5 @@ C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.dll
 C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\ref\MCInventory.dll
 C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.pdb
 C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.genruntimeconfig.cache
+C:\Users\claud\Documents\MCInventory\bin\Debug\net5.0\HtmlAgilityPack.dll
+C:\Users\claud\Documents\MCInventory\obj\Debug\net5.0\MCInventory.csproj.CopyComplete
