@@ -57,9 +57,11 @@ namespace MCInventory
                         string input = Encoding.UTF8.GetString(myFileLoader.data);
             
                          if (path == "/resources.html")
-                    
-                    
                         data = Encoding.UTF8.GetBytes(ResourcesHtmlParser.Process(input));
+
+                        else if (path == "/index.html")
+                        data = Encoding.UTF8.GetBytes(IndexHtmlPasrser.Process(input));
+
                     
                     else 
                     
