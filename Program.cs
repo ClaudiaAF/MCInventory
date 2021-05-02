@@ -62,6 +62,8 @@ namespace MCInventory
                         else if (path == "/index.html")
                         data = Encoding.UTF8.GetBytes(IndexHtmlPasrser.Process(input));
 
+                        else if (path == "/recipes.html")
+                        data = Encoding.UTF8.GetBytes(RecipesHtmlParser.Process(input));
                     
                     else 
                     
