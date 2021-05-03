@@ -36,3 +36,11 @@ nav{
     font-family: "Minecrafter";
     margin: 2%;
 }
+
+.goTo-Button{
+    border: 2px;
+    border-color: #ffff;
+    border-style: solid;
+    padding: 2%;
+    background-color: transparent;
+}
