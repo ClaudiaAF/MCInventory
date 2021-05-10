@@ -100,6 +100,21 @@ namespace MCInventory
         }
         static void Main(string[] args)
         {
+            Block[] blockArray = {new GlassBlock(1), new SandBlock(1), new Coal(10), new WoodBlock(10)};
+
+            foreach(Block myBlock in blockArray)
+            {
+                try 
+                {
+                    Flammable flame = (Flammable)myBlock;
+                    flame.Burn();
+                }
+                catch(Exception e)
+                {
+                    
+                }
+            }
+
             listener = new HttpListener();
             listener.Prefixes.Add(url);
             listener.Start();
