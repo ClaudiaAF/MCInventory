@@ -5,7 +5,7 @@ namespace MCInventory
     abstract class Weapons
     {
         private int count;
-        protected string weponType;
+        protected string weaponType;
 
         public int Count 
         {
@@ -26,7 +26,7 @@ namespace MCInventory
         {
             get
             {
-                return weponType;
+                return weaponType;
             }
         }
 
