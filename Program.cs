@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using System.Net;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace MCInventory
 {
@@ -100,21 +101,19 @@ namespace MCInventory
         }
         static void Main(string[] args)
         {
-            Block[] blockArray = {new GlassBlock(1), new SandBlock(1), new Coal(10), new WoodBlock(10)};
-
-            foreach(Block myBlock in blockArray)
+            Inventory inventory = new Inventory();
+            // Stick stick = (Stick) Stick.Get();
+            // Recipe stickRecipe = new Recipe(stick, new Block[2,2] {{WoodBlock.Get(), null},{WoodBlock.Get(), null}});
+            
+            RecipeBook.Populate();
+            foreach (Recipe curRecipe in RecipeBook.Recipes)
             {
-                try 
-                {
-                    Flammable flame = (Flammable)myBlock;
-                    flame.Burn();
-                }
-                catch(Exception e)
-                {
-                    
-                }
+                Console.WriteLine("recipe is viable " + curRecipe.IsVisable());
             }
 
+            Inventory.GetCount("WoodBlock" + Inventory.GetCount("Sand Block"));
+            
+            
             listener = new HttpListener();
             listener.Prefixes.Add(url);
             listener.Start();
