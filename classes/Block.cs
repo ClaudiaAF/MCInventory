@@ -6,6 +6,7 @@ namespace MCInventory
     {
         private int count;
         protected string blockType;
+        protected static Block classType;
 
         public int Count 
         {
@@ -42,5 +43,10 @@ namespace MCInventory
         }
 
         public abstract void Place();
+
+        public static Block Get()
+        {
+            return classType;
+        }
     }
 }
