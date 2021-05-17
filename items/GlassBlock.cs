@@ -11,6 +11,7 @@ namespace MCInventory
         public GlassBlock(int newCount): base(newCount)
         {
             blockType = "Glass block"; 
+            classType = this;
         }
 
         public override void Place()

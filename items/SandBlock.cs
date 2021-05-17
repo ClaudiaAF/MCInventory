@@ -7,6 +7,7 @@ namespace MCInventory
         public SandBlock(int newCount): base(newCount)
         {
             blockType = "Sand block";
+            classType = this;
         }
 
         public override void Place()

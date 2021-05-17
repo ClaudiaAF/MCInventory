@@ -7,6 +7,7 @@ namespace MCInventory
         public WoodBlock(int newCount): base(newCount)
         {
             blockType = "Wood Block";
+            classType = this;
         }
 
         public override void Place()
