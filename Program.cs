@@ -111,6 +111,20 @@ namespace MCInventory
                 Console.WriteLine("recipe is viable " + curRecipe.IsVisable());
             }
 
+            Recipe axeRecipe = new Recipe((Crafted) Inventory.GetClass("WoodAxe tool"), new Block[3,3]
+                {Inventory.GetClass("Wood block"), Inventory.GetClass("Wood block"), null}, 
+                Inventory.GetClass("Wood block"), Inventory.GetClass("Stick"), null},
+                Inventory.GetClass("Stick"), null}});
+
+            RecipeBook.AddRecipe(axeRecipe);
+
+            foreach (Recipe curRecipe in RecipeBook.Recipes)
+            {
+                Console.WriteLine("recipe is viable " + curRecipe.IsVisable());
+            }
+
+            Console.WriteLine("Server version" + Database.GetVersion());
+
             Inventory.GetCount("WoodBlock" + Inventory.GetCount("Sand Block"));
             
             

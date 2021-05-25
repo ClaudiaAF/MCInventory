@@ -9,7 +9,50 @@ namespace MCInventory
 
         public static void Populate()
         {
-            //axe recipe
+
+            ArrayList records = Database.ReadRecipes();
+
+            // foreach (Tuple<string.string[,]> curTuple in records)
+            // {
+            //     Recipe curRecipe = new Recipe((Crafted) Inventory.GetClass(cuTuple.Item1), new Block[3,3]
+            //         {{Inventory.GetClass(curTuple.Item2[0,0]),Inventory.GetClass(curTuple.Item2[0,1])},
+            //         {Inventory.GetClass(curTuple.Item2[0,2]),Inventory.GetClass(curTuple.Item2[1,0])},
+            //         {Inventory.GetClass(curTuple.Item2[1,1]),Inventory.GetClass(curTuple.Item2[1,2])},
+            //         {Inventory.GetClass(curTuple.Item2[2,0]), Inventory.GetClass(curTuple.Item2[2,1])},
+            //         {Inventory.GetClass(curTuple.Item2[2,2])}});
+
+            //     recipes.Add(curRecipe);
+            // }
+
+            public static ArrayList Recipes
+            {
+                get{
+                    return recipes
+                }
+            }
+
+            public static void AddRecipe(Recipe recipe)
+            {
+                string blockType = recipe.Result.BlockType;
+
+                bool newRecipe = true;
+                foreach (Recipe curRecipe in recipes)
+                {
+                    if (curRecipe.Result.BlockType == blockType)
+                        newRecipe = false;
+                }
+
+                if (newRecipe)
+                {
+                    recipes.Add(recipe);
+                    Database.AddRecipe(recipe);
+
+                }
+            }
+
+
+
+            axe recipe
             Recipe axeRecipe = new Recipe((Craft) WoodAxe.Get(), new Block[3,3] {{WoodBlock.Get(), WoodBlock.Get(), null}, 
                                                                 {WoodBlock.Get(), Stick.Get(), null},
                                                                 {null, Stick.Get(), null}});

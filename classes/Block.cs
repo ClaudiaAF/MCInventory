@@ -20,6 +20,8 @@ namespace MCInventory
                     count = -value;
                 else
                     count = value;
+
+                    Database.UpdateBlockCount(blockType, count);
             }
         }
 
