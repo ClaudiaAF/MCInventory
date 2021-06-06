@@ -25,6 +25,15 @@ namespace MCInventory
                     case "WoodAxe tool":
                         newBlock = new WoodAxe(curTuple.Item2);
                         break;
+                    case "String material":
+                        newBlock = new String(curTuple.Item2);
+                        break;
+                    case "Flint material":
+                        newBlock = new Flint(curTuple.Item2);
+                        break;
+                    case "Bow tool":
+                        newBlock = new Bow(curTuple.Item2);
+                        break;
                     default:
                         newBlock = null;
                         break;

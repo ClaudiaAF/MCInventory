@@ -4,12 +4,11 @@ using System.Text;
 
 namespace MCInventory
 {
-    class String: Block, Flammable, Crafted
+    class String: Block, Flammable
     {
-        private Recipe recipe;
         public String(int newCount): base(newCount)
         {
-            blockType = "String resource";
+            blockType = "String material";
             classType = this;
         }
 
@@ -24,14 +23,5 @@ namespace MCInventory
             Console.WriteLine("String is burning");
         }
         
-        public void SetRecipes(Recipe newRecipe)
-        {
-            recipe = newRecipe;
-        }
-
-        public Recipe GetRecipe()
-        {
-            return recipe;
-        }
     }
 }

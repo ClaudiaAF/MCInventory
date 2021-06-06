@@ -18,11 +18,39 @@
         <h1 class="resources-heading text-center">Resources</h1>
 
     <div id="ItemContainer">
-        
+        <form action="/resources.html" method=POST>
+            <ul id="TheList">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 4</li>
+                <li>item 3</li>
+            </ul>
+            <input type="submit" value="Submit"/>
+        </form>
+
+        <form action="/resources.html" method="POST">
+            <input type="text" id="inputRecipe" name="recipe" value="WoodAxe tool"/>
+            <input type="submit" value="Craft"/>
+        </form>
+
+        <form id="recipeForm" action="/resources.html" method="POST">
+            <input type="hidden" id="inputRecipeAuto" name="recipe" value=""/>
+            <ul id="RecipeList">
+            </ul>
+        </form>
     </div>
 
    
 
     </body>
+
+    <script>
+        function changeSubmit(event)
+        {
+            console.log(event.submitter.value);
+            document.getElementById("inputRecipeAuto").value = event.submitter.value;
+        }
+        document.getElementById("recipeForm").addEventListener('submit',changeSubmit);
+    </script>
 
 </html>

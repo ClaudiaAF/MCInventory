@@ -2,23 +2,20 @@ using System;
 
 namespace MCInventory
 {
-    class Flint: Block, Crafted
+    class Bow: Block, Crafted
     {
-
         private Recipe recipe;
-        public Flint(): base()
+
+        public Bow(int newCount): base(newCount)
         {
-            blockType = "Flint material";
-        }
-        public Flint(int newCount): base(newCount)
-        {
-            blockType = "Flint material"; 
+            blockType = "Bow tool";
             classType = this;
         }
 
         public override void Place()
         {
             Count--;
+            Console.WriteLine("Bow tool has been placed");
         }
 
         public void SetRecipes(Recipe newRecipe)
@@ -30,6 +27,5 @@ namespace MCInventory
         {
             return recipe;
         }
-
     }
 }
