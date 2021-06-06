@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class Stick: Block, Craft
+    class Stick: Block, Crafted
     {
         private Recipe recipe;
         public Stick(int newCount): base(newCount)

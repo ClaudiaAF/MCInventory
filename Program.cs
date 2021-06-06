@@ -30,7 +30,44 @@ namespace MCInventory
                 Console.WriteLine(req.HttpMethod);
                 Console.WriteLine(req.UserHostName);
                 Console.WriteLine(req.UserAgent);
+                Console.WriteLine("Has entity body: "+ req.HasEntityBody);
                 Console.WriteLine();
+
+                if (req.HasEntityBody)
+                {
+                    System.IO.Stream body = req.InputStream;
+                    System.Text.Encoding encoding = req.ContentEncoding;
+                    System.IO.StreamReader reader = new System.IO.StreamReader(body,encoding);
+                    if (req.ContentType != null)
+                        Console.WriteLine("Client data content type: "+req.ContentType);
+                    Console.WriteLine("Client data content length: "+req.ContentLength64);
+                    
+                    Console.WriteLine("Start of data:");
+                    string data = reader.ReadToEnd();
+                    Console.WriteLine(data);
+                    Console.WriteLine("End of data:");
+                    body.Close();
+                    reader.Close();
+
+                     string[] properties = data.Split('&');
+                    foreach (string curProp in properties)
+                    {
+                        string[] pair = curProp.Split('=');
+                        string key = pair[0].Replace('+',' ');
+                        if (key == "recipe")
+                        {
+                            RecipeBook.ApplyRecipe(pair[1].Replace('+',' '));
+                        }    
+
+                        else if (Inventory.GetClass(key) != null)
+                        {
+                            int value = Int32.Parse(pair[1]);
+                            Inventory.GetClass(key).Count = value;
+                        }     
+                    }  
+
+                }
+
 
                 string path = req.Url.AbsolutePath;
 
@@ -43,7 +80,7 @@ namespace MCInventory
                 }
                 //ensure we don't increment the page views if favicon shows 
                 if (path != "/favicon.ico")
-                pageViews+= 1;
+                    pageViews += 1;
 
                 try
                 {
@@ -53,30 +90,30 @@ namespace MCInventory
                     string disableSubmit = !runServer ? "disabled" : "";
                     byte[] data;
 
-                    if(myFileLoader.mimeType.IndexOf("html") >= 0)
+                    if (myFileLoader.mimeType.IndexOf("html") >= 0)
                     {
                         string input = Encoding.UTF8.GetString(myFileLoader.data);
-            
-                         if (path == "/resources.html")
-                        data = Encoding.UTF8.GetBytes(ResourcesHtmlParser.Process(input));
+
+                        if (path == "/resources.html")
+                            data = Encoding.UTF8.GetBytes(ResourcesHtmlParser.Process(input));
 
                         else if (path == "/index.html")
-                        data = Encoding.UTF8.GetBytes(IndexHtmlPasrser.Process(input));
+                            data = Encoding.UTF8.GetBytes(IndexHtmlPasrser.Process(input));
 
                         else if (path == "/recipes.html")
-                        data = Encoding.UTF8.GetBytes(RecipesHtmlParser.Process(input));
-                    
-                    else 
-                    
-                        throw new FileNotFoundException("non page");
+                            data = Encoding.UTF8.GetBytes(RecipesHtmlParser.Process(input));
+
+                        else
+
+                            throw new FileNotFoundException("non page");
                     }
-                            
-                    
+
+
                     else
                     {
                         data = myFileLoader.data;
                     }
-                
+
                     res.ContentType = myFileLoader.mimeType;
                     res.ContentEncoding = Encoding.UTF8;
                     res.ContentLength64 = data.LongLength;
@@ -88,7 +125,7 @@ namespace MCInventory
                 {
                     byte[] data;
                     data = Encoding.UTF8.GetBytes("<h2>A 404 Error has Occured</h2>");
-                   
+
                     res.ContentType = "text/html";
                     res.ContentEncoding = Encoding.UTF8;
                     res.ContentLength64 = data.LongLength;
@@ -102,36 +139,44 @@ namespace MCInventory
         static void Main(string[] args)
         {
             Inventory inventory = new Inventory();
-            // Stick stick = (Stick) Stick.Get();
-            // Recipe stickRecipe = new Recipe(stick, new Block[2,2] {{WoodBlock.Get(), null},{WoodBlock.Get(), null}});
-            
             RecipeBook.Populate();
             foreach (Recipe curRecipe in RecipeBook.Recipes)
             {
-                Console.WriteLine("recipe is viable " + curRecipe.IsVisable());
+                Console.WriteLine("recipe is " + curRecipe.Result.BlockType);
             }
 
-            Recipe axeRecipe = new Recipe((Crafted) Inventory.GetClass("WoodAxe tool"), new Block[3,3]
-                {Inventory.GetClass("Wood block"), Inventory.GetClass("Wood block"), null}, 
-                Inventory.GetClass("Wood block"), Inventory.GetClass("Stick"), null},
-                Inventory.GetClass("Stick"), null}});
+            Block axeBlock = Inventory.GetClass("WoodAxe tool");
+            Block woodBlock = Inventory.GetClass("Wood block");
+            Block stickBlock = Inventory.GetClass("Stick material");
 
-            RecipeBook.AddRecipe(axeRecipe);
+            if (woodBlock != null && axeBlock != null && stickBlock != null)
+            {
+                Recipe axeRecipe = new Recipe((Crafted)axeBlock, new Block[3, 3]
+                                {
+                                    {woodBlock, woodBlock, null},
+                                    {woodBlock, stickBlock, null},
+                                    {null,stickBlock,null}
+                                });
+                                
+                RecipeBook.AddRecipe(axeRecipe);
+            }
+
+
+            Console.WriteLine("Wood block count is "+Inventory.GetClass("Wood block").Count);
+            Inventory.GetClass("Wood block").Count++;
+            Console.WriteLine("Wood block count is "+Inventory.GetClass("Wood block").Count);
 
             foreach (Recipe curRecipe in RecipeBook.Recipes)
             {
-                Console.WriteLine("recipe is viable " + curRecipe.IsVisable());
+                Console.WriteLine("recipe is " + curRecipe.Result.BlockType);
             }
 
-            Console.WriteLine("Server version" + Database.GetVersion());
+            Console.WriteLine("server version" + Database.GetVersion());
 
-            Inventory.GetCount("WoodBlock" + Inventory.GetCount("Sand Block"));
-            
-            
             listener = new HttpListener();
             listener.Prefixes.Add(url);
             listener.Start();
-        
+
             Console.WriteLine("Listening for connections on" + url);
 
             Task listenTask = HandleIncommingConnections();

@@ -52,3 +52,12 @@
     padding-top: 10%;
     font-size: 30px;
 }
+
+input{
+    height: 50px;
+    width: 90px;
+}
+
+#TheList{
+    color: #ffff;
+}

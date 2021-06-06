@@ -6,9 +6,9 @@ namespace MCInventory
     class Recipe
     {
         private Block[,] inputs;
-        private Craft result;
+        private Crafted result;
 
-        public Recipe(Craft newResult, Block[,] newInputs)
+        public Recipe(Crafted newResult, Block[,] newInputs)
         {
             inputs = newInputs;
             result = newResult;

@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class StoneBlock: Block, Craft
+    class StoneBlock: Block, Crafted
     {
         private Recipe recipe;
         public StoneBlock(int newCount): base(newCount)

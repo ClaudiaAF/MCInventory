@@ -6,7 +6,7 @@ namespace MCInventory
     {
         public WoodBlock(int newCount): base(newCount)
         {
-            blockType = "Wood Block";
+            blockType = "Wood block";
             classType = this;
         }
 

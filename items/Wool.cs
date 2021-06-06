@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MCInventory
 {
-    class Wool: Block, Flammable, Craft
+    class Wool: Block, Flammable, Crafted
     {
         private Recipe recipe;
         public Wool(int newCount): base(newCount)

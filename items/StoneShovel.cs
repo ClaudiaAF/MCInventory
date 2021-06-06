@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class StoneShovel: Block, Craft
+    class StoneShovel: Block, Crafted
     {
 
         private Recipe recipe;

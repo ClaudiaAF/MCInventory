@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class WoodSword: Block, Craft
+    class WoodSword: Block, Crafted
     {
         private Recipe recipe;
        public WoodSword(int newCount): base(newCount)

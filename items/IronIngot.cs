@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class IronIngot: Block, Craft
+    class IronIngot: Block, Crafted
     {
 
         private Recipe recipe;

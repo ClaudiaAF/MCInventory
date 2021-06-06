@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class GlassBottle: Block, Craft
+    class GlassBottle: Block, Crafted
     {
         private Recipe recipe;
 

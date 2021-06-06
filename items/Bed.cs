@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MCInventory
 {
-    class Bed: Block, Craft
+    class Bed: Block, Crafted
     {
         private Recipe recipe;
         public Bed(int newCount): base(newCount)

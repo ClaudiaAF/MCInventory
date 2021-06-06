@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class WoodAxe: Block, Craft
+    class WoodAxe: Block, Crafted
     {
         private Recipe recipe;
 

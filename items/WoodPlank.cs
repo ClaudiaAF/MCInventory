@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class WoodPlank: Block, Flammable, Craft
+    class WoodPlank: Block, Flammable, Crafted
     {
         private Recipe recipe;
 

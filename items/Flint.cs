@@ -2,7 +2,7 @@ using System;
 
 namespace MCInventory
 {
-    class Flint: Block, Craft
+    class Flint: Block, Crafted
     {
 
         private Recipe recipe;

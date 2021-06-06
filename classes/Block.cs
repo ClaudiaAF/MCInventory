@@ -21,7 +21,8 @@ namespace MCInventory
                 else
                     count = value;
 
-                    Database.UpdateBlockCount(blockType, count);
+                Database.UpdateBlockCount(blockType, count);
+
             }
         }
 

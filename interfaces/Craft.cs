@@ -1,9 +1,9 @@
 namespace MCInventory
 
 {
-    interface Craft
+    interface Crafted
     {
         void SetRecipes(Recipe newRecipe);
-        Recipe GetRecipe();
+        Recipe GetRecipe();        
     }
 }

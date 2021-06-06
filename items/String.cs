@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MCInventory
 {
-    class String: Block, Flammable, Craft
+    class String: Block, Flammable, Crafted
     {
         private Recipe recipe;
         public String(int newCount): base(newCount)
