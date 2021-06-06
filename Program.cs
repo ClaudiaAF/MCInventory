@@ -147,7 +147,9 @@ namespace MCInventory
 
             Block axeBlock = Inventory.GetClass("WoodAxe tool");
             Block woodBlock = Inventory.GetClass("Wood block");
+            Block bowBlock = Inventory.GetClass("Bow tool");
             Block stickBlock = Inventory.GetClass("Stick material");
+            Block stringBlock = Inventory.GetClass("String material");
 
             if (woodBlock != null && axeBlock != null && stickBlock != null)
             {
@@ -159,6 +161,18 @@ namespace MCInventory
                                 });
                                 
                 RecipeBook.AddRecipe(axeRecipe);
+            }
+
+            if (stringBlock != null && stickBlock != null && bowBlock != null)
+            {
+                Recipe bowRecipe = new Recipe((Crafted)bowBlock, new Block[3, 3]
+                                {
+                                    {stringBlock, stickBlock, null},
+                                    {stringBlock, null, stickBlock},
+                                    {stringBlock,stickBlock,null}
+                                });
+                                
+                RecipeBook.AddRecipe(bowRecipe);
             }
 
 
