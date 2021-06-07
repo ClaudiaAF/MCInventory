@@ -6,8 +6,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/resources_style.css">
+        <link  rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/loadingio/ldbutton@v1.0.1/dist/ldbtn.min.css"
+/>
+
     </head>
     <body>
+        
         <nav>
             <a href="/index.html"><h2 class="inventory-nav">Inventory</h2></a>
 
@@ -16,16 +20,18 @@
         <h1 class="resources-heading text-center">Resources</h1>
 
     <div id="ItemContainer" class="container">
+        <div class="row">
+            <div class="col">  
                 <form action="/resources.html" method=POST>           
                     <div id="TheList">
                     </div>
                     <!-- <input type="submit" value="Submit"/> -->
                 </form>
-        <div class="row">
+            </div>
             <div class="col">        
                 <form id="recipeForm" action="/resources.html" method="POST">
                     <input type="hidden" id="inputRecipeAuto" name="recipe" value=""/>
-                    <ul id="RecipeList" class="list-group">
+                    <ul id="RecipeList" class="list-group" style="float: right; margin-left: -194; margin-right: -42%; margin-top: -64%;">
                     </ul>
                 </form>
             </div>
