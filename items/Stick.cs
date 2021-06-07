@@ -9,6 +9,7 @@ namespace MCInventory
         {
             blockType = "Stick material";
             classType = this;
+            blockImage = "img/stickMaterial_Image.png";
         }
 
         public override void Place()

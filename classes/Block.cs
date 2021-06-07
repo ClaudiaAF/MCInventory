@@ -6,6 +6,7 @@ namespace MCInventory
     {
         private int count;
         protected string blockType;
+        protected string blockImage;
         protected static Block classType;
 
         public int Count 
@@ -31,6 +32,14 @@ namespace MCInventory
             get
             {
                 return blockType;
+            }
+        }
+
+        public string BlockImage
+        {
+            get
+            {
+                return blockImage;
             }
         }
 

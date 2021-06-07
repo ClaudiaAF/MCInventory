@@ -6,12 +6,14 @@ namespace MCInventory
     {
         public GlassBlock(): base()
         {
-            blockType = "Glass Block";
+            blockType = "Glass block";
+           
         }
         public GlassBlock(int newCount): base(newCount)
         {
             blockType = "Glass block"; 
             classType = this;
+            blockImage = "img/glassBlock_Image.png";
         }
 
         public override void Place()

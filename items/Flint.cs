@@ -14,6 +14,7 @@ namespace MCInventory
         {
             blockType = "Flint material"; 
             classType = this;
+            blockImage = "img/flintTool_Image.png";
         }
 
         public override void Place()

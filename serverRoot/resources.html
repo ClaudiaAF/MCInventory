@@ -9,40 +9,40 @@
     </head>
     <body>
         <nav>
-            <h2 class="inventory-nav">Inventory</h2>
+            <a href="/index.html"><h2 class="inventory-nav">Inventory</h2></a>
 
-            <a class="nav-link-resources" href="/resources.html">Resources</a>
-            <a class="nav-link-recipes" href="/recipes.html">Recipes</a>
         </nav>
 
         <h1 class="resources-heading text-center">Resources</h1>
 
-    <div id="ItemContainer">
-        <form action="/resources.html" method=POST>
-            <ul id="TheList">
-                <li>item 1</li>
-                <li>item 2</li>
-                <li>item 4</li>
-                <li>item 3</li>
-            </ul>
-            <input type="submit" value="Submit"/>
-        </form>
-
-        <form action="/resources.html" method="POST">
-            <input type="text" id="inputRecipe" name="recipe" value="WoodAxe tool"/>
-            <input type="submit" value="Craft"/>
-        </form>
-
-        <form id="recipeForm" action="/resources.html" method="POST">
-            <input type="hidden" id="inputRecipeAuto" name="recipe" value=""/>
-            <ul id="RecipeList">
-            </ul>
-        </form>
+    <div id="ItemContainer" class="container">
+                <form action="/resources.html" method=POST>           
+                    <div id="TheList">
+                    </div>
+                    <!-- <input type="submit" value="Submit"/> -->
+                </form>
+        <div class="row">
+            <div class="col">        
+                <form id="recipeForm" action="/resources.html" method="POST">
+                    <input type="hidden" id="inputRecipeAuto" name="recipe" value=""/>
+                    <ul id="RecipeList" class="list-group">
+                    </ul>
+                </form>
+            </div>
+        </div>
+        
+        
     </div>
+
+
+        
+    
 
    
 
     </body>
+    <script src="./src/bootstrap-input-spinner.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script>
         function changeSubmit(event)
@@ -51,6 +51,8 @@
             document.getElementById("inputRecipeAuto").value = event.submitter.value;
         }
         document.getElementById("recipeForm").addEventListener('submit',changeSubmit);
+
+        $("input[type='number']").inputSpinner()
     </script>
 
 </html>

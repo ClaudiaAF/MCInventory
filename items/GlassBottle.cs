@@ -8,14 +8,14 @@ namespace MCInventory
 
         public GlassBottle(int newCount): base(newCount)
         {
-            blockType = "Glass Bottle";
+            blockType = "Glass bottle block";
             classType = this;
+            blockImage = "img/glassBottleBlock_Image.png";
         }
 
         public override void Place()
         {
             Count--;
-            Console.WriteLine("Glass bottle has been placed");
         }
 
         public void SetRecipes(Recipe newRecipe)

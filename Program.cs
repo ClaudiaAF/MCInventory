@@ -90,7 +90,7 @@ namespace MCInventory
                     string disableSubmit = !runServer ? "disabled" : "";
                     byte[] data;
 
-                    if (myFileLoader.mimeType.IndexOf("html") >= 0)
+                    if (myFileLoader.mimeType.IndexOf("/html") >= 0)
                     {
                         string input = Encoding.UTF8.GetString(myFileLoader.data);
 
@@ -121,7 +121,7 @@ namespace MCInventory
                     await res.OutputStream.WriteAsync(data, 0, data.Length);
                     //close the listener
                 }
-                catch (FileNotFoundException e)
+                catch (FileNotFoundException)
                 {
                     byte[] data;
                     data = Encoding.UTF8.GetBytes("<h2>A 404 Error has Occured</h2>");
@@ -148,8 +148,39 @@ namespace MCInventory
             Block axeBlock = Inventory.GetClass("WoodAxe tool");
             Block woodBlock = Inventory.GetClass("Wood block");
             Block bowBlock = Inventory.GetClass("Bow tool");
+            Block bedBlock = Inventory.GetClass("Bed block");
             Block stickBlock = Inventory.GetClass("Stick material");
             Block stringBlock = Inventory.GetClass("String material");
+            Block woolBlock = Inventory.GetClass("Wool material");
+            Block glassBlock = Inventory.GetClass("Glass block");
+            Block glassBottleBlock = Inventory.GetClass("Glass bottle block");
+            Block cobblestoneBlock = Inventory.GetClass("Cobblestone block");
+            Block stoneShovelBlock = Inventory.GetClass("Stone shovel tool");
+
+
+             if (cobblestoneBlock!= null && stickBlock != null)
+            {
+                Recipe stoneShovelRecipe = new Recipe((Crafted)stoneShovelBlock, new Block[3, 3]
+                                {
+                                    {null, cobblestoneBlock, null},
+                                    {null, stickBlock, null},
+                                    {null, stickBlock, null}
+                                });
+                                
+                RecipeBook.AddRecipe(stoneShovelRecipe);
+            }
+
+             if (glassBlock!= null && glassBottleBlock != null)
+            {
+                Recipe glassBottleRecipe = new Recipe((Crafted)glassBottleBlock, new Block[3, 3]
+                                {
+                                    {glassBlock, null, glassBlock},
+                                    {null, glassBlock, null},
+                                    {null, null, null}
+                                });
+                                
+                RecipeBook.AddRecipe(glassBottleRecipe);
+            }
 
             if (woodBlock != null && axeBlock != null && stickBlock != null)
             {
@@ -175,7 +206,19 @@ namespace MCInventory
                 RecipeBook.AddRecipe(bowRecipe);
             }
 
+            if (woodBlock!= null && woolBlock != null)
+            {
+                Recipe bedRecipe = new Recipe((Crafted)bedBlock, new Block[3, 3]
+                                {
+                                    {null, null, null},
+                                    {woolBlock, woolBlock, woolBlock},
+                                    {woodBlock, woodBlock, woodBlock}
+                                });
+                                
+                RecipeBook.AddRecipe(bedRecipe);
+            }
 
+            Console.WriteLine("Wood block count is "+Inventory.GetClass("Wood block").Count);
             Console.WriteLine("Wood block count is "+Inventory.GetClass("Wood block").Count);
             Inventory.GetClass("Wood block").Count++;
             Console.WriteLine("Wood block count is "+Inventory.GetClass("Wood block").Count);

@@ -8,9 +8,9 @@ namespace MCInventory
         private Recipe recipe;
         public StoneShovel(int newCount): base(newCount)
         {
-            blockType = "Stone Block";
+            blockType = "Stone shovel tool";      
+            blockImage = "img/stoneShovelTool_Image.png";      
         }
-
         public override void Place()
         {
             Count--;

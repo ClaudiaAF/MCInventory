@@ -10,6 +10,7 @@ namespace MCInventory
         {
             blockType = "String material";
             classType = this;
+            blockImage = "img/stringMaterial_Image.png";
         }
 
         public override void Place()

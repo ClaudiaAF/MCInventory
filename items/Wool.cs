@@ -4,13 +4,14 @@ using System.Text;
 
 namespace MCInventory
 {
-    class Wool: Block, Flammable, Crafted
+    class Wool: Block, Flammable
     {
         private Recipe recipe;
         public Wool(int newCount): base(newCount)
         {
-            blockType = "Wool resource";
+            blockType = "Wool material";
             classType = this;
+            blockImage = "img/woolMaterial_Image.png";
         }
 
         public override void Place()

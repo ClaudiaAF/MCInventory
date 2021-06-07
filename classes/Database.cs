@@ -92,6 +92,7 @@ namespace MCInventory
         string sql = "UPDATE blocks SET count = @count WHERE blockType = @blockType ";
         using var cmd = new MySqlCommand(sql,con);
 
+
         cmd.Parameters.AddWithValue("@blockType", blockType);
         cmd.Parameters.AddWithValue("@count", count);
 

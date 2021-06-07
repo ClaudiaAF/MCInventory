@@ -33,38 +33,21 @@ namespace MCInventory
             someNode.RemoveAllChildren();
             ArrayList newItems = Inventory.items;
 
-            
-
-
-            foreach (Block currentBlock in Inventory.items)
+             foreach (Block currentBlock in Inventory.items)
             {
                 HtmlNode newNode = HtmlNode.CreateNode(
-                	"<li><label for=\"" + currentBlock.BlockType + "\">"+currentBlock.BlockType+"</label>" + 
-                	"<input type=\"text\" id=\""+currentBlock.BlockType+"\" name=\""+currentBlock.BlockType+
-                	"\" value=\""+currentBlock.Count+"\"/></li>");
+                	"<div class='row text-center' style='float:left;'><div class='col-sm colm-left'><div class='card text-center' style='width: 18rem; margin-left:30px; margin-bottom:10%; border-styles'><img class='card-img-top mx-auto' text-align='center' style='width: 150px; height: 150px; padding: 15px;'  src=\""+currentBlock.BlockImage+"\"><div class='card-body'><h5 class='card-title'>" + "<label for=\"" + currentBlock.BlockType + "\">"+currentBlock.BlockType+"</label>" + "</h5><div class='input-group mb-3'><input class='form-control' aria-label='Recipients username' aria-describedby='basic-addon2' type=\"number\" id=\""+currentBlock.BlockType+"\" name=\""+currentBlock.BlockType+"\" value=\""+currentBlock.Count+"\"/><button class='btn btn-outline-success' type='submit' value='Submit'>Add</button></div></div></div></div>");
                 someNode.AppendChild(newNode);
+                
             }
 
             someNode = htmlDoc.GetElementbyId("RecipeList");
 
             foreach(Recipe curRecipe in RecipeBook.Recipes)
             {
-                HtmlNode newNode = HtmlNode.CreateNode("<li><input type=\"submit\" value=\""+ 
-                         curRecipe.Result.BlockType + "\"/></li>");
+                HtmlNode newNode = HtmlNode.CreateNode("<li class='list-group-item'><input type=\"submit\" value=\""+ curRecipe.Result.BlockType + "\"/></li>");
                 someNode.AppendChild(newNode);
             }
-
-
-            // HtmlNode itemNode = htmlDoc.GetElementbyId("itemContainer");
-            // Console.WriteLine(itemNode.OuterHtml);
-
-            // string[] resourceNames = {"birch", "oak", "coal", "sand", "bucket", "fishing rod", "lapus-lazuli", "cobblestone", "wooden pick-axe", "arrow", "bones"};
-
-            // foreach (string resTitle in resourceNames)
-            // {
-            //     HtmlNode newNode = HtmlNode.CreateNode("<div class='row text-center'><div class='col-sm colm-left'><p value='resource-label' class='resource-label'>" + resTitle + "</p><img src='img/tree-resource.jpg' class='resource-img'/><p value='integer' class='resource-amount' >5</p></div><div class='col-sm colm-middle'><p value='resource-label' class='resource-label'>" + resTitle + "</p><img src='img/tree-resource.jpg' class='resource-img'/><p value='integer' class='resource-amount'>5</p></div><div class='col-sm colm-right'><p value='resource-label' class='resource-label'>" + resTitle + "</p><img src='img/tree-resource.jpg' class='resource-img'/><p value='integer' class='resource-amount'>5</p></div></div>");
-            //     itemNode.AppendChild(newNode);
-            // }
             
 
             return htmlDoc.DocumentNode.InnerHtml;

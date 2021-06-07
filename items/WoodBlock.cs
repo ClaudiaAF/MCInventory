@@ -8,6 +8,7 @@ namespace MCInventory
         {
             blockType = "Wood block";
             classType = this;
+            blockImage = "img/woodBlock_Image.png";
         }
 
         public override void Place()

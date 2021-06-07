@@ -34,6 +34,24 @@ namespace MCInventory
                     case "Bow tool":
                         newBlock = new Bow(curTuple.Item2);
                         break;
+                    case "Wool material":
+                        newBlock = new Wool(curTuple.Item2);
+                        break;
+                    case "Bed block":
+                        newBlock = new Bed(curTuple.Item2);
+                        break;
+                    case "Glass block":
+                        newBlock = new GlassBlock(curTuple.Item2);
+                        break;
+                    case "Glass bottle block":
+                        newBlock = new GlassBottle(curTuple.Item2);
+                        break;
+                    case "Stone shovel tool":
+                        newBlock = new StoneShovel(curTuple.Item2);
+                        break;
+                    case "Cobblestone block":
+                        newBlock = new Cobblestone(curTuple.Item2);
+                        break;
                     default:
                         newBlock = null;
                         break;
@@ -54,7 +72,7 @@ namespace MCInventory
         {
             foreach (Block curItem in items)
             {
-                if (curItem.BlockType == index)
+                if (curItem.BlockType == index )
                     return curItem;
             }
             return null;

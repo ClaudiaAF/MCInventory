@@ -10,6 +10,7 @@ namespace MCInventory
         {
             blockType = "WoodAxe tool";
             classType = this;
+            blockImage = "img/woodAxeTool_Image.png";
         }
 
         public override void Place()

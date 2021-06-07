@@ -1,38 +1,6 @@
-.colm-left{
-    border: 2px;
-    border-color: #ffff;
-    border-style: solid;
-    padding: 2%;
-    margin: 2.5%;
-    height: 260px;
-}
-
-.colm-middle{
-    border: 2px;
-    border-color: #ffff;
-    border-style: solid;
-    padding: 2%;
-    margin: 2.5%;
-    height: 260px;
-}
-
-.colm-right{
-    border: 2px;
-    border-color: #ffff;
-    border-style: solid;
-    padding: 2%;
-    margin: 2.5%;
-    height: 260px;
-}
-
-.resources-grid{
-    height: 650px;
-    width: 900px;
-    position: absolute;
-    overflow-y: scroll;
-    margin: 3%;
-    padding: 3%;
-}
+body {
+    overflow: hidden; /* Hide scrollbars */
+  }
 
 .inventory-nav{
     font-family: "Minecrafter";
@@ -58,6 +26,34 @@ input{
     width: 90px;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+    opacity: 1;
+
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 #TheList{
-    color: #ffff;
+    list-style-type: none;
+    overflow:scroll; 
+    overflow-x: hidden;
+    height:600px;
+}
+
+.card-img-top {
+    height: 60%;
+    width: auto;
+}
+
+form{    
+    float: left;
+    margin-left: -27%;
+    margin-top: 10%;
+    width: inherit;
 }
