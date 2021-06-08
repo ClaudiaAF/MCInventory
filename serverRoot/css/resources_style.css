@@ -21,12 +21,39 @@ body {
     font-size: 30px;
 }
 
+.btn{
+    overflow: hidden;
+    background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    color: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+    background-color: transparent;  
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+    border-image-slice: 1;
+}
+
+.btn:hover{
+    transition: ease-in-out .5s;
+    background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);;
+	-webkit-text-fill-color: #fff;
+}
+
 input{
     height: 50px;
     width: 300px;
     display: block;
     border: 0;  
     background-color: transparent;  
+}
+
+input:hover{
+    color: #fff;
+}
+
+.sledgehammer:hover{
+    color: #fff;
 }
 
 
@@ -63,7 +90,7 @@ input[type=number] {
 
   /* Handle */
 #TheList::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 100%); 
+    background: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
     border-radius: 10px;
 }
 
@@ -78,7 +105,7 @@ input[type=number] {
 
   /* Handle */
 #RecipeList::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 100%); 
+    background: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
     border-radius: 10px;
 }
 
@@ -97,8 +124,9 @@ input[type=number] {
     box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
     cursor: pointer;    
     transition: .5s;
-    background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 100%);
+    background: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
     transform: scale(1.05);
+    color: #fff;
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 

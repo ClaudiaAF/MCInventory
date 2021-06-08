@@ -4,11 +4,7 @@
 }
 
 body {
-    background-image:url(../img/background.jpg);
-    height: 1000px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #16193b;
 }
 #loading {
     width: 100%;
