@@ -1,27 +1,7 @@
-<!--
-
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, project_title, project_description
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+![GitHub language count](https://img.shields.io/github/languages/count/ClaudiaAF/MCInventory?colorB=f33c1a)
+![GitHub repo size](https://img.shields.io/github/repo-size/ClaudiaAF/MCInventory?colorB=f33c1a)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ClaudiaAF/MCInventory?colorB=f33c1a)
+![GitHub watchers](https://img.shields.io/github/watchers/ClaudiaAF/MCInventory?colorB=f33c1a)
 
 
 
@@ -29,15 +9,15 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/64257497/121602481-a4204880-ca47-11eb-9c11-bb5760274e74.png "width="195" alt="logo" >
   </a>
 
-  <h3 align="center">RONA</h3>
+  <h3 align="center">MCInventory</h3>
 
   <p align="center">
-    Covid-19 Screening
+    Minecraft Inventory Tracker
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/claudiaAF/Sprecan"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
@@ -60,14 +40,14 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+    <li><a href="#features-and-functions">Features and Functions</a>
+    <ul>
+        <li><a href="#database-erd">Database ERD</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#mockups">Mockups</a>
+    </li>    
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -81,61 +61,46 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+![header](https://user-images.githubusercontent.com/64257497/121604465-da12fc00-ca4a-11eb-83fa-058a817c456f.png)
 
+
+
+MCInventory is a practical way for users to interact with their inventory when they are not able to access their Minecraft game. MCInventory was created using 
+C# and an MVC architecture, where MYSQL is used as the backing database.
 
 ### Built With
 
-* []()
-* []()
-* []()
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-
-
+* [Visua Studio Code](https://code.visualstudio.com/)
+* [C#](https://code.visualstudio.com/docs/languages/csharp)
+* [WAMP](https://sourceforge.net/projects/wampserver/)
+* [MYSQL](https://www.mysql.com/)
+* [PhpMyAdmin](https://www.phpmyadmin.net/)
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Features and Functions
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* Inventory items are dynamically displayed in cards for the user to interact with
+* The images, names and counts are dynamically displayed from the database
+* The amounts of each item can be increased or decreased
+* The user can craft items by clicking any of the craftable item buttons
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### Database ERD
+
+<img width="1897" alt="Group 56" src="https://user-images.githubusercontent.com/64257497/121604174-58bb6980-ca4a-11eb-8a67-857193c11239.png">
 
 
+## Mockups
+
+![landing page transparent](https://user-images.githubusercontent.com/64257497/121604601-24947880-ca4b-11eb-9c6a-9b0d007d8a99.png)
+![abuot us 2 transparent](https://user-images.githubusercontent.com/64257497/121604662-3aa23900-ca4b-11eb-9be9-1ee8cf1b4e80.png)
+![iMac-24-All-Colors-Mockup](https://user-images.githubusercontent.com/64257497/121604867-9d93d000-ca4b-11eb-85a1-f584c3a625aa.png)
+![iMac-24-All-ffMockup](https://user-images.githubusercontent.com/64257497/121605038-f6636880-ca4b-11eb-8172-646ff7a79d6b.png)
 
 <!-- ROADMAP -->
 ## Roadmap
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
-
 
 
 <!-- CONTRIBUTING -->
@@ -161,20 +126,16 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+* **Claudia Ferreira** - 180181@virtualwindow.co.za
+* **Project Link** - https://github.com/ClaudiaAF/MCInventory.git
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
-
-
+* [C# for visual studio code documentation](https://code.visualstudio.com/docs/languages/csharp)
+* Lecturer Christof Enslin
 
 
 
@@ -190,5 +151,5 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [issues-url]: https://github.com/github_username/repo/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=d0ac4b
+[linkedin-url]: https://linkedin.com/in/ClaudiaAF
