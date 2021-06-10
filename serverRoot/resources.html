@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MCI Resources</title>
+        <title>Inventory & Crafting</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/index.css">
@@ -12,41 +12,88 @@
     </head>
     <body>
         
-        <nav>
-            <a href="/index.html"><h2 class="inventory-nav">Inventory</h2></a>
+        <div id="mySidenav" class="sidenav">
+          <h3 style="padding: 13px 15px 13px 16px;;color: #fff;font-family: 'Minecrafter';font-size: 25px;">MCInventory</h3>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/index.html">About</a>
+            <a href="/resources.html">Inventory</a>
+            <a href="/contact.html">Contact</a>
+        </div>
 
-        </nav>
-
-        <h1 class="resources-heading text-center">Resources</h1>
-
+        <div id="main">            
+            <span style="margin:2%;font-size:53px;cursor:pointer; background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;" onclick="openNav()">&#9776; </span>
+          </div>
     <div id="ItemContainer" class="container">
+        <h1 class="resources-heading text-center" style="text-align: end;">Available Crafting Items</h1>
         <div class="row">
             <div class="col">  
+                <h1 class="resources-heading text-center" style="text-align: start;">Inventory Items</h1>
                 <form action="/resources.html" method=POST>           
                     <div id="TheList">
                     </div>
                     <!-- <input type="submit" value="Submit"/> -->
                 </form>
             </div>
-            <div class="col">        
+            <div class="col">   
+                     
                 <form id="recipeForm" action="/resources.html" method="POST">
                     <input type="hidden" id="inputRecipeAuto" name="recipe" value=""/>
                     <ul id="RecipeList" class="list-group" style="float: right; margin-left: -194; margin-right: -42%; margin-top: -64%;">
                     </ul>
                 </form>
             </div>
-        </div>
-        
+        </div>     
         
     </div>
-
-
-        
-    
-
-   
-
     </body>
+
+    <footer class="section footer-classic context-dark bg-image">
+      <div class="container">
+          <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+              <div class="pr-xl-4"><a class="brand" href="/index.html"><h3 style="font-family: 'Minecrafter'; font-size: 30px; background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">MCInventory</h3></a>
+                <p>Managing and Crafting on-the-go!</p>
+                <!-- Rights-->
+                <p class="rights"><span>©  </span><span class="copyright-year">2021</span><span> </span><span>MCI</span><span>. </span><span>All Rights Reserved to Minecraft.</span></p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>Contacts</h5>
+              <dl class="contact-list">
+                <dt>Address:</dt>
+                <dd>Pretoria, South Africa</dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>email:</dt>
+                <dd><a href="mailto:#">mcinventory@gmail.com</a></dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>tel:</dt>
+                <dd><a href="tel:#">+21 110 0211 123</a> <span>
+                </dd>
+              </dl>
+            </div>
+            <div class="col-md-4 col-xl-3">
+              <h5>Links</h5>
+              <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+                <li><a href="/recipes">Contact</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters social-container">
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+        </div>
+      
+      
+  
+  
+  </footer>
     <script src="./src/bootstrap-input-spinner.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -59,6 +106,20 @@
         document.getElementById("recipeForm").addEventListener('submit',changeSubmit);
 
         $("input[type='number']").inputSpinner()
+
+        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(22, 25, 59, 0.6)";
+            }
+
+            /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+            function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "#16193b";
+            }
     </script>
 
 </html>

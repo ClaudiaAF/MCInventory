@@ -1,21 +1,27 @@
+body{
+    overflow-x: hidden;
+}
+
 .inventory-nav{
     font-family: "Minecrafter";
 }
 
-.recipes-grid{
-    position: absolute;
-    overflow-y: scroll;
-    margin-left: 12%;
-    padding: 3%;
-    height: 700px;
+
+::-webkit-scrollbar {
+    width: 12px;
 }
 
-.recipe-grid-img{
-    height: 200px;    
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+    border-radius: 10px;
 }
 
-@media (min-width: 1200px){
-.container {
-    max-width: 1440px;
-    }
+.form-control{
+    padding: 32px;
 }

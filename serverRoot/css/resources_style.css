@@ -1,6 +1,4 @@
-body {
-    overflow: hidden; 
-  }
+
 
 .inventory-nav{
     font-family: "Minecrafter";
@@ -36,7 +34,7 @@ body {
 
 .btn:hover{
     transition: ease-in-out .5s;
-    background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);;
+    background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
 	-webkit-text-fill-color: #fff;
 }
 

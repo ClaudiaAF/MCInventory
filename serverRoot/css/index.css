@@ -3,9 +3,52 @@
     src: url("../font/Minecrafter.Reg.ttf");
 }
 
-body {
-    background-color: #16193b;
+@font-face {
+    font-family: "Nimbus";
+    src: url("../font/Nimbus.ttf");
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+    border-radius: 10px;
+}
+
+body, html {
+    background-color: #16193b;
+    height: 100%;
+    transition: background-color .5s;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../img/long_rectangle.png");
+    z-index:2;
+    /* Full height */
+    height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+
+  .blocks-layer img{
+    width: 32%;
+    margin-left: 31%;
+    margin-top: 1%;
+  }
+
 #loading {
     width: 100%;
     height: 100%;
@@ -25,6 +68,7 @@ body {
   #loading-image {
     z-index: 999;
   }
+
 h1{
     color: aliceblue;
     font: 600;
@@ -32,10 +76,23 @@ h1{
     font-size: -webkit-xxx-large;
 }
 
+.title-heading h1{
+    text-align: center;
+    padding-top: 5%;
+    font-size: 120px;
+}
+
 h2 {
     color: aliceblue;
     font-size: x-large;
     font-family: Helvetica, Arial, sans-serif;
+}
+
+.h3 {
+    color: aliceblue;
+    font-size: 50px;
+    padding-top: 10%;
+    font-family: "Minecrafter";
 }
 .heading-container{
    padding-top: 13%;
@@ -43,7 +100,7 @@ h2 {
 
 p{
     color: aliceblue;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Nimbus';
 }
 
 nav{
@@ -57,4 +114,161 @@ nav{
     border-style: solid;
     padding: 2%;
     background-color: transparent;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0E1025;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.5s;
+  }
+  
+  .sidenav a:hover {
+    transition: 0.5s;
+    background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  .about-us-title {
+    color: aliceblue;
+    font-size: 50px;
+    font-family: "Minecrafter";
+    padding-bottom: 3%;
+    text-align: center;
+  }
+
+
+.card-about-us {
+    background-color: transparent;
+    border: 0;
+}
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .get-to-it {
+      margin-top: 4%;
+      overflow: hidden;
+        background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+        background-color: transparent;  
+        border-width: 2px;
+        padding: 10px;
+        width: 240px;
+        border-style: solid;        
+        border-collapse: separate; 
+        border-image: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+        border-image-slice: 1;
+        transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  }
+
+  .get-to-it:hover{  
+    overflow: hidden;
+    border-radius: 50px;
+    background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+	-webkit-text-fill-color: #fff;    
+    transform: scale(1.05);
+   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+  footer{
+      width: 100%;
+      border-top: 4px solid;
+      border-image: linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+      background-size: 100% 100%;
+      padding:20px 0px;
+      background: transparent;
+      height: 300px;
+      border-image-slice: 1;
+  }
+
+  .context-dark, .bg-gray-dark, .bg-primary {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: #ffffff;
+}
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.social-inner:hover{
+    background: -webkit-linear-gradient(154deg, rgba(76,46,189,1) 0%, rgba(246,60,22,1) 100%, rgba(231,60,56,1) 100%);
+	-webkit-text-fill-color: #fff;    
+    transform: scale(1.05);
+   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font-size: 13px;
+    font-family: "Nimbus";
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-list li a:before {
+    content: "\f14f";
+    font: 400 21px/1 "Material Design Icons";
+    color: #4d6de6;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: -28px;
+    margin-right: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .22s ease;
 }
