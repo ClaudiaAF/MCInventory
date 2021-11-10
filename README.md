@@ -209,7 +209,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 * [C# for visual studio code documentation](https://code.visualstudio.com/docs/languages/csharp)
 * Lecturer Christof Enslin
-* [Plagiarism Form](PlagiarismForm.png)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
